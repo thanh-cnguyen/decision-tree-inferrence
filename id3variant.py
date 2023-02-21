@@ -1,6 +1,5 @@
 import sys
 import math
-import random as rd
 
 
 def get_attributes(data_file):
@@ -129,7 +128,7 @@ def split_partition(attributes, partitions):
 
         ids = []
         for _ in res.keys():
-            id = partition_id_to_split + 1
+            id = int(partition_id_to_split) + 1
             while id in ids or str(id) in partitions.keys():
                 id += 1
             ids.append(id)
@@ -149,8 +148,8 @@ def split_partition(attributes, partitions):
 
 def main():
     if (len(sys.argv) != 4):
-        data_file = open('dataset-x.txt', 'r')
-        input_file = open('partition-x.txt', 'r')
+        data_file = open('dataset-2.txt', 'r')
+        input_file = open('partition-1.txt', 'r')
         output_file = open('partition-2.txt', 'w')
     else:
         data_file = open(sys.argv[1], 'r')
