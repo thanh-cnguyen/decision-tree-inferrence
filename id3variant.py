@@ -113,7 +113,8 @@ def max_f_values(attributes, partitions):
 
 
 def split_partition(attributes, partitions):
-    partition_id_to_split, attribute_id, dump = max_f_values(attributes, partitions)
+    partition_id_to_split, attribute_id, dump = max_f_values(
+        attributes, partitions)
     if dump is None:
         print('Invalid f_value')
     else:
