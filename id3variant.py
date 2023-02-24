@@ -19,24 +19,23 @@ def get_partitions(input_file):
     partitions = {}
     for line in input_file:
         line = line.strip().split()
-        partitions[line[0]] = []
         partitions[line[0]] = line[1:]
     return partitions
 
 
 def entropy(probs):
     if probs:
-        if 0 not in probs:
-            e = list(map((lambda prob: prob * math.log(1/prob, 2)), probs))
-            return sum(e)
-        else:
-            return 0
+        e = 0
+        for prob in probs:
+            if prob != 0:
+                e -= prob * math.log2(prob)
+        return e
     else:
         print("Probability list of attribute not found!")
 
 
-def get_probabilities(array, elements):
-    result = [array.count(el) / len(array) for el in elements]
+def get_probabilities(target_array, unique_elements):
+    result = [target_array.count(el) / len(target_array) for el in unique_elements]
     return result
 
 
