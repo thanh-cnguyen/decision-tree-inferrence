@@ -148,7 +148,7 @@ def split_partition(attributes, partitions):
 
 def main():
     if (len(sys.argv) != 4):
-        data_file = open('dataset-2.txt', 'r')
+        data_file = open('dataset-1.txt', 'r')
         input_file = open('partition-1.txt', 'r')
         output_file = open('partition-2.txt', 'w')
     else:
